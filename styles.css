@@ -14,18 +14,21 @@ body {
   padding: 25px;
   height: 500px;
   background-color: #aa96da;
-  border-radius: 20px;
+  border-radius: 30px;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+  box-shadow: 15px 15px gray;
 }
 
 .screen {
   border: 2px solid black;
+  border-radius: 10px;
   background-color: lightgray;
   width: 400px;
   height: 100px;
   font-size: 25px;
+  margin-bottom: 15px;
 }
 
 .keypad {
@@ -37,7 +40,20 @@ body {
   font-size: 20px;
 }
 
+.keypad:hover {
+  width: 95px;
+  height: 65px;
+  color: #aa96da;
+  box-shadow: 5px 5px rgb(44, 43, 43);
+  font-size: 25px;
+}
+
 #clear-all {
   width: 400px;
   border-radius: 20px;
+}
+
+#clear-all:hover {
+  width: 405px;
+  height: 65px;
 }
