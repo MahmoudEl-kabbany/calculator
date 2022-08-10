@@ -12,7 +12,7 @@ body {
 .calculator {
   max-width: 400px;
   padding: 25px;
-  height: 500px;
+  min-height: 500px;
   background-color: #aa96da;
   border-radius: 30px;
   display: flex;
@@ -26,14 +26,15 @@ body {
   border-radius: 10px;
   background-color: lightgray;
   width: 400px;
-  height: 100px;
+  min-height: 100px;
   font-size: 25px;
   margin-bottom: 15px;
+  overflow-wrap: break-word;
 }
 
 .keypad {
   width: 90px;
-  height: 60px;
+  max-height: 60px;
   margin-bottom: 10px;
   border-radius: 100%;
   background-color: #c5fad5;
@@ -42,7 +43,7 @@ body {
 
 .keypad:hover {
   width: 95px;
-  height: 65px;
+  max-height: 65px;
   color: #aa96da;
   box-shadow: 5px 5px rgb(44, 43, 43);
   font-size: 25px;
@@ -55,5 +56,4 @@ body {
 
 #clear-all:hover {
   width: 405px;
-  height: 65px;
 }
