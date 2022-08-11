@@ -15,14 +15,21 @@ const divide = function (a, b) {
 };
 
 const screen = document.querySelector(".screen");
-const insertButtons = document.querySelectorAll(".insert");
+const numberButtons = document.querySelectorAll(".insert-number");
+const operatorButtons = document.querySelectorAll(".insert-operator");
 const clearAllButton = document.getElementById("clear-all");
 const clearOneButton = document.getElementById("clear-one");
 screen.textContent = "";
 
-for (let i = 0; i < insertButtons.length; i++) {
-  insertButtons[i].addEventListener("click", () => {
-    screen.textContent += insertButtons[i].textContent;
+for (let i = 0; i < numberButtons.length; i++) {
+  numberButtons[i].addEventListener("click", () => {
+    screen.textContent += numberButtons[i].textContent;
+  });
+}
+
+for (let i = 0; i < operatorButtons.length; i++) {
+  operatorButtons[i].addEventListener("click", () => {
+    screen.textContent += operatorButtons[i].textContent;
   });
 }
 
