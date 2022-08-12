@@ -14,6 +14,25 @@ const divide = function (a, b) {
   return a / b;
 };
 
+const operate = function () {
+  let onlyNumbers = true;
+  let screenText = screen.textContent;
+
+  for (let i = 0; i < screenText.textContent; i++) {
+    if (operators.includes(screenText[i])) {
+      onlyNumbers = false;
+    }
+  }
+
+  if (operators.includes(screenText[screenText.length - 1])) {
+    console.log("There must be a number at the end");
+  } else if (onlyNumbers === true) {
+    console.log(screenText);
+  } else {
+    console.log("correct");
+  }
+};
+
 const screen = document.querySelector(".screen");
 const numberButtons = document.querySelectorAll(".insert-number");
 const operatorButtons = document.querySelectorAll(".insert-operator");
