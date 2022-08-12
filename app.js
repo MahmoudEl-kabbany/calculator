@@ -66,5 +66,9 @@ clearOneButton.addEventListener("click", () => {
     }
   }
   let newScreenText = screenText.slice(0, screenText.length - 1);
-  screen.textContent = newScreenText;
+  if (newScreenText === "") {
+    screen.textContent = "0";
+  } else {
+    screen.textContent = newScreenText;
+  }
 });
