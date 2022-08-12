@@ -60,6 +60,11 @@ clearOneButton.addEventListener("click", () => {
       operatorButtons[i].removeAttribute("disabled", "");
     }
   }
+  if (operators.includes(screenText[screenText.length - 2])) {
+    for (let i = 0; i < operatorButtons.length; i++) {
+      operatorButtons[i].setAttribute("disabled", "");
+    }
+  }
   let newScreenText = screenText.slice(0, screenText.length - 1);
   screen.textContent = newScreenText;
 });
