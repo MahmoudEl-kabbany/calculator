@@ -11,7 +11,11 @@ const multiply = function (a, b) {
 };
 
 const divide = function (a, b) {
-  return a / b;
+  if (b === 0) {
+    return "Can not divide by zero";
+  } else {
+    return a / b;
+  }
 };
 
 const operate = function () {
@@ -25,11 +29,39 @@ const operate = function () {
   }
 
   if (operators.includes(screenText[screenText.length - 1])) {
-    console.log("There must be a number at the end");
+    const h1 = document.createElement("h1");
+    h1.textContent = "There must be a number at the end";
+    document.body.appendChild(h1);
+    setTimeout(() => {
+      document.body.removeChild(h1);
+    }, 3000);
   } else if (onlyNumbers === true) {
-    console.log(screenText);
+    screen.textContent = screenText;
   } else {
-    console.log("correct");
+    let numbers = screenText.split(/[÷+−x]+/);
+    let operators = screenText.split(/[0123456789.]+/);
+    operators.pop();
+    operators.shift();
+    while (operators.length > 0) {
+      firstNumber = parseFloat(numbers.shift());
+      secondNumber = parseFloat(numbers.shift());
+      operator = operators.shift();
+      if (operator === "÷") {
+        newNumber = divide(firstNumber, secondNumber);
+        if (newNumber === "Can not divide by zero") {
+          screen.textContent = "Can not divide by zero";
+          break;
+        }
+      } else if (operator === "+") {
+        newNumber = add(firstNumber, secondNumber);
+      } else if (operator === "−") {
+        newNumber = subtract(firstNumber, secondNumber);
+      } else {
+        newNumber = multiply(firstNumber, secondNumber);
+      }
+      numbers.unshift(newNumber.toString());
+    }
+    screen.textContent = newNumber;
   }
 };
 
