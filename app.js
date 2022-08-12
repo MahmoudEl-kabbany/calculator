@@ -18,7 +18,7 @@ const operate = function () {
   let onlyNumbers = true;
   let screenText = screen.textContent;
 
-  for (let i = 0; i < screenText.textContent; i++) {
+  for (let i = 0; i < screenText.length; i++) {
     if (operators.includes(screenText[i])) {
       onlyNumbers = false;
     }
@@ -92,3 +92,5 @@ clearOneButton.addEventListener("click", () => {
     screen.textContent = newScreenText;
   }
 });
+
+equalButton.addEventListener("click", operate);
